@@ -131,8 +131,7 @@
         background-color: #a8d0e6;
       }
 
-      /**Selector de ID**/
-      #enlaceSeccion {
+      .enlaceSeccion {
         text-decoration: underline;
         font-size: 0.8rem;
         color: #4074d4;
@@ -184,7 +183,7 @@
       .titulos + p {
         margin-left: 20px;
       }
-
+      /**Selector de ID**/
       #listaValores {
         margin-left: 5px;
         margin-right: 30px;
@@ -326,9 +325,9 @@
           recursos comunes, optimizar su uso y promover una cultura de
           <strong>respeto</strong> y
           <strong>responsabilidad</strong> compartida. Conoce más sobre nuestra
-          <a id="enlaceSeccion" href="#historia">historia</a> y
-          <a id="enlaceSeccion" href="#valores">valores</a>. Una de las frases
-          que guía nuestros objetivos es del ex presidente Samora Machel:
+          <a class="enlaceSeccion" href="#historia">historia</a> y
+          <a class="enlaceSeccion" href="#valores">valores</a>. Una de las
+          frases que guía nuestros objetivos es del ex presidente Samora Machel:
         </p>
         <blockquote
           cite="https://psicologiaymente.com/reflexiones/frases-colaboracion"
@@ -344,18 +343,20 @@
             style="width: 100%; height: 10%"
             alt="ayudaComunitaria"
           />
-        </figure>
-        <figcaption>
-          <em
-            ><time datetime="2024-11-9">9 de noviembre de 2024:</time> Entrega y
-            organización de recursos comunitarios en una jornada de apoyo a una
-            comunidad.
+
+          <figcaption>
+            <em>
+              <time datetime="2024-11-09">9 de noviembre de 2024</time>: Entrega
+              y organización de recursos comunitarios en una jornada de apoyo a
+              una comunidad.
+            </em>
             <address>
               Contacto: <a id="enlaceSeccion" href="#contacto">Contáctanos</a
-              ><br />Avenida Barcelona, Guayaquil, Ecuador
-            </address></em
-          >
-        </figcaption>
+              ><br />
+              Avenida Barcelona, Guayaquil, Ecuador
+            </address>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="container">
@@ -448,18 +449,19 @@
           <iframe
             src="https://www.youtube.com/embed/WS_TjVy_kVw?si=eJJXtDYyLaGkRo9z"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
+            class="video-iframe"
           ></iframe>
+
           <iframe
             src="https://www.youtube.com/embed/xwpsYSOQjpE?si=rp0gPccLqjyTBGAy"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
+            class="video-iframe"
           ></iframe>
         </div>
       </section>
