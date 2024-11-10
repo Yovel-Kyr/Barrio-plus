@@ -12,7 +12,7 @@ body {
 Navbar 
 ================================*/
 
-nav {
+#navbar {
   padding: 0px 18px;
   display: flex;
   justify-content: space-between;
@@ -21,19 +21,19 @@ nav {
   background-color: #fff;
 }
 
-nav ul {
+#navbar ul {
   display: flex;
   list-style: none;
   justify-content: center;
 }
 
-nav ul li {
+#navbar ul li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-nav ul li a {
+#navbar ul li a {
   color: #212526;
   text-decoration: none;
   font-weight: bold;
@@ -46,13 +46,13 @@ nav ul li a {
   transition: transform 0.3s ease;
 }
 
-nav ul li a:hover {
+#navbar ul li a:hover {
   transform: scale(1.04);
   background-color: #a3b5c8;
   color: #f0f4f8;
 }
 
-nav ul li a.activo {
+#navbar ul li a.activo {
   background-color: #a3b5c8;
   color: #f0f4f8;
   scale: 1.04;
@@ -170,7 +170,7 @@ button:hover {
 }
 
 /*================================ 
-Buttons 
+Media Queries 
 ================================*/
 
 @media (max-width: 1024px) {

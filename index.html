@@ -3,25 +3,188 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="author" content="Alejandro Larrea" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/assets/logo-icon.png" type="image/png" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <style></style>
+    <title>Barrio Plus</title>
+
+    <style>
+      .contenedorBanner {
+        margin: auto;
+        border: 5px;
+        padding: 5px;
+      }
+
+      .banner {
+        height: 550px;
+        background: url(/assets/img/fotos/breed.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #textoBanner {
+        color: #4f3a32;
+        text-transform: uppercase;
+        font-size: 3em;
+      }
+
+      .contenedorInstalaciones {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+        font-size: 1.2em;
+      }
+
+      .elementoReservar,
+      .elementos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        border: 3px solid #a3b5c8;
+      }
+      .elementoReservar {
+        font-weight: bold;
+        justify-content: right;
+      }
+
+      .elementos img {
+        width: 300px;
+        height: 220px;
+      }
+
+      .contenedorHerramientas {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+        padding-bottom: 70px;
+        font-size: 1.2em;
+      }
+
+      .sobreNosotros {
+        width: 86%;
+        margin: auto;
+        border: 3px solid #a3b5c8;
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .imgNosotros,
+      .nosotros {
+        width: 45%;
+      }
+
+      .imgNosotros img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nosotros h4 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      .nosotros p {
+        font-size: 1em;
+        text-align: justify;
+      }
+
+      h3,
+      p {
+        color: #4a4a4a;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .banner {
+          width: 90%;
+          margin: auto;
+        }
+
+        .elementos {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .elementos img {
+          width: 90%;
+          height: auto;
+          margin: auto;
+        }
+
+        .sobreNosotros {
+          flex-direction: column;
+        }
+
+        .imgNosotros,
+        .nosotros {
+          width: 90%;
+        }
+
+        #informacion,
+        #adicional {
+          width: 90%;
+          margin: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .banner {
+          height: 90%;
+        }
+        #textoBanner {
+          font-size: 1.5em;
+          padding: 8px;
+          text-align: center;
+        }
+
+        .elementoReservar {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .sobreNosotros {
+          padding: 20px;
+        }
+
+        .imgNosotros,
+        .nosotros {
+          width: 100%;
+        }
+
+        #informacion,
+        #adicional {
+          width: 90%;
+          text-align: justify;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav id="navbar">
         <a href="index.html">
-          <img src="logo-icon.png" alt="logo" class="logo" />
+          <img class="logo" src="/assets/logo-icon.png" alt="logo" />
         </a>
         <ul>
           <li><a href="instalaciones.html">Instalaciones</a></li>
           <li><a href="herramientas.html">Herramientas</a></li>
-          <li><a href="historial.html" class="">Historial</a></li>
-          <li><a href="" class="">Nosotros</a></li>
+          <li><a href="historial.html">Historial</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li>
             <a href="#" class="user">
               <span class="material-symbols-outlined"> account_circle </span>
@@ -30,5 +193,136 @@
         </ul>
       </nav>
     </header>
+    <section class="contenedorBanner">
+      <div class="banner">
+        <h1 id="textoBanner">Barrio Plus</h1>
+      </div>
+    </section>
+
+    <div
+      id="informacion"
+      style="
+        font-weight: bold;
+        background-color: #a3b5c8;
+        color: #4a4a4a;
+        padding: 10px;
+        font-size: 1em;
+      "
+    >
+      ¡Bienvenido a Barrio Plus un Sistema de Gestion de Recursos Comunitarios!
+      Puedes revisar las instalaciones y herramientas reservadas recientes aqui
+      abajo
+    </div>
+
+    <section class="contenedorInstalaciones">
+      <h3>Instalaciones Reservadas Recientes</h3>
+      <div class="elementoReservar">
+        <button class="boton-mediano">Reservar...</button>
+      </div>
+
+      <div class="elementos">
+        <img
+          src="/assets/img/fotos/comunidad.jpg"
+          alt="Instalacion Reservada"
+        />
+        <span>Cancha de Futbol</span>
+        <span>Reservado hasta: 20/11/2024</span>
+      </div>
+
+      <div class="elementos">
+        <img src="/assets/img/fotos/sala.jpeg" alt="Instalacion Reservada" />
+        <span>Sala de eventos</span>
+        <span>Reservado hasta: 21/11/2024</span>
+      </div>
+    </section>
+
+    <section class="contenedorHerramientas">
+      <h3>Herramientas Reservadas Recientes</h3>
+      <div class="elementoReservar">
+        <button class="boton-mediano">Reservar...</button>
+      </div>
+
+      <div class="elementos">
+        <img
+          src="/assets/img/fotos/podadora.jpeg"
+          alt="Herramienta Reservada"
+        />
+        <span>Podadora</span>
+        <span>Reservado hasta: 19/11/2024</span>
+      </div>
+
+      <div class="elementos">
+        <img
+          src="/assets/img/fotos/escalera.jpeg"
+          alt="Herramientas Reservada"
+        />
+        <span>Escalera</span>
+        <span>Reservado hasta: 20/11/2024</span>
+      </div>
+    </section>
+
+    <section
+      id="adicional"
+      style="width: 90%; margin: auto; padding: 10px; border: 3px solid #a3b5c8"
+    >
+      <details>
+        <summary style="font-weight: bold; cursor: pointer">
+          Informacion Adicional sobre los recursos de la Comunidad
+        </summary>
+        <p>
+          La comunidad cuenta con varias instalaciones y herramientas puestas a
+          disposición para reservar. Contamos con canchas deportivas, sala de
+          eventos, parques, herramientas de mantenimiento y áreas recreativas.
+          Recuerda revisar la disponibilidad y reservar dando un solo clic.
+        </p>
+      </details>
+    </section>
+
+    <section class="sobreNosotros">
+      <div class="imgNosotros">
+        <img src="/assets/img/fotos/nosotros.png" alt="Nosotros" />
+      </div>
+      <div class="nosotros">
+        <h3>Grupo 6</h3>
+        <p>
+          El Sistema de Gestión de Recursos Comunitarios nació con la idea de
+          facilitar la vida en la comunidad, permitiendo a los vecinos de un
+          barrio o urbanización compartir y administrar recursos de manera
+          eficiente. Este sistema brinda una plataforma donde cada miembro puede
+          consultar la disponibilidad de instalaciones y herramientas comunes,
+          realizar reservas y ver el historial de uso. Así, fomentamos una
+          convivencia organizada para el uso de espacios y recursos, promoviendo
+          un sentido de responsabilidad compartida en el cuidado de los bienes
+          comunes.
+        </p>
+        <button class="boton-grande">Más información aquí...</button>
+      </div>
+    </section>
+    <footer>
+      <section id="redes-sociales">
+        <ul>
+          <li><a href="">Redes sociales</a></li>
+          <li><a href="">Youtube</a></li>
+          <li><a href="">Facebook</a></li>
+          <li><a href="">Instagram</a></li>
+          <li><a href="">Twitter</a></li>
+        </ul>
+      </section>
+
+      <section id="lista-pie">
+        <ul>
+          <li><a href="">Documentacion</a></li>
+          <li><a href="">Politicas de uso</a></li>
+          <li><a href="">Terminos y condiciones</a></li>
+          <li><a href="">Soporte Tecnico</a></li>
+          <li><a href="">Manual de usuario</a></li>
+          <li><a href="">Contactanos</a></li>
+        </ul>
+      </section>
+
+      <section id="copiright">
+        <p class="texto">&copy; Todos los derechos reservados 2024-2024</p>
+      </section>
+    </footer>
   </body>
 </html>
