@@ -169,8 +169,15 @@
         ================================*/
 
       @media (max-width: 768px) {
+        .buscar,
+        #buscar-barra,
+        button.boton-mediano,
+        table,
         .filtro {
           width: 100%;
+        }
+
+        .filtro {
           border-right: none;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
@@ -181,7 +188,6 @@
 
         table {
           display: block;
-          width: 100%;
           margin: 0 auto;
           overflow-x: auto;
         }
@@ -211,17 +217,14 @@
         }
 
         button.boton-mediano {
-          width: 100%;
           margin-top: 10px;
-          font-size: 1.2rem;
         }
-        .libre::before {
+        .libre::before,
+        .ocupado::before,
+        button.boton-mediano {
           font-size: 1.2rem;
         }
 
-        .ocupado::before {
-          font-size: 1.2rem;
-        }
         .texto {
           font-size: 1rem;
         }
@@ -236,10 +239,7 @@
           font-size: 0.95rem;
         }
 
-        .libre::before {
-          font-size: 1rem;
-        }
-
+        .libre::before,
         .ocupado::before {
           font-size: 1rem;
         }
@@ -354,11 +354,11 @@
         <section class="cabezera">
           <h2 class="titulo-buscar titulos">Instalaciones</h2>
           <div class="buscar">
-            <label for="buscar" class="texto"></label>
+            <label for="buscar-barra" class="texto"></label>
             <input
               placeholder="Buscar..."
               type="text"
-              id="buscar"
+              id="buscar-barra"
               style="
                 padding: 0 10px;
                 margin: 10px;
@@ -546,7 +546,7 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer id="pie-pagina">
+    <footer>
       <section id="redes-sociales">
         <ul>
           <li><a href="">Redes sociales</a></li>
