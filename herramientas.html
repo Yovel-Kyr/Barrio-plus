@@ -54,10 +54,9 @@
         border-radius: 6px;
         justify-content: center;
       }
-      /**Disponible**/
+
       .disponible::before {
         content: "Disponible";
-        font-family: verdana;
         font-size: 0.6rem;
         font-weight: bold;
         color: #4a4a4a;
@@ -67,10 +66,8 @@
         background-color: #a8d0e6;
       }
 
-      /**No disponible**/
       .no-disponible::before {
         content: "No disponible";
-        font-family: verdana;
         font-size: 0.6rem;
         font-weight: bold;
         color: #f0f4f8;
@@ -99,6 +96,72 @@
         padding-right: 40px;
         display: inline-block;
         margin: 200px;
+      }
+
+      @media (max-width: 768px) {
+        .tit {
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        table,
+        tbody,
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+        tbody tr {
+          margin-bottom: 20px;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        td {
+          text-align: center;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .imagen {
+          height: 120px;
+          width: 100%;
+        }
+        .titulo {
+          font-size: 0.9em;
+        }
+        .boton-pequenio {
+          width: 100%;
+        }
+        th {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tit {
+          font-size: 1.2rem;
+          margin: 10px;
+        }
+        .text {
+          max-width: 100%;
+          font-size: 0.7rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+        td {
+          padding: 6px;
+          font-size: 0.8rem;
+          text-align: center;
+        }
+        .imagen {
+          height: 100px;
+          width: 100%;
+        }
+        .boton-pequenio {
+          padding: 8px;
+          font-size: 0.8rem;
+        }
       }
     </style>
   </head>
