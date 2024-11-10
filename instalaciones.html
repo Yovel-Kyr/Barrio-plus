@@ -46,6 +46,12 @@
         align-items: center;
         justify-content: space-between;
       }
+
+      .titulo-buscar,
+      .buscar {
+        display: inline-block;
+      }
+
       /*================================ 
         Tablas 
         ================================*/
@@ -132,33 +138,16 @@
           width: 100%;
         }
 
-        tr th {
-          width: 0px;
-          padding: 20px;
-          text-align: center;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
         tr td {
           width: 0px;
-          padding: 10px;
-          text-align: center;
         }
 
         .imagen-tabla {
           width: 75px;
           height: 80px;
-          object-fit: cover;
-        }
-
-        .imagen-tabla:hover {
-          cursor: pointer;
-          transform: scale(1.02);
-          transition: ease 0.3s;
         }
 
         .tabla-titulos {
-          font-weight: bold;
           font-size: 0.64rem;
           padding: 10px 0px;
         }
@@ -196,7 +185,7 @@
         </a>
         <ul>
           <li><a href="" class="activo">Instalaciones</a></li>
-          <li><a href="">Herramientas</a></li>
+          <li><a href="herramientas.html">Herramientas</a></li>
           <li><a href="">Historial</a></li>
           <li><a href="">Nosotros</a></li>
           <li>
@@ -293,10 +282,8 @@
       <div class="principal">
         <!-- Cabecera -->
         <section class="cabezera">
-          <h2 class="titulos buscar" style="display: inline-block">
-            Instalaciones
-          </h2>
-          <div class="buscar" style="display: inline-block">
+          <h2 class="titulo-buscar titulos">Instalaciones</h2>
+          <div class="buscar">
             <label for="buscar" class="texto"></label>
             <input
               placeholder="Buscar..."
