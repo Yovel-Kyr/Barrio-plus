@@ -11,9 +11,14 @@
       rel="stylesheet"
     />
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       #main {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
       }
       /*================================ 
         Contenedores 
@@ -26,7 +31,7 @@
       .filtro {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
         float: left;
-        width: 14%;
+        width: 16%;
         margin: 10px;
         padding: 10px;
       }
@@ -41,6 +46,7 @@
       }
       .cabezera {
         display: flex;
+
         padding: 0px 50px;
         margin-bottom: 20px;
         align-items: center;
@@ -68,7 +74,6 @@
       }
 
       tr td {
-        width: 90px;
         padding: 10px;
         text-align: center;
       }
@@ -109,69 +114,134 @@
 
       .libre::before {
         content: "Libre";
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: #4a4a4a;
       }
 
       .ocupado::before {
         content: "Ocupado";
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: #4a4a4a;
+      }
+
+      aside section ul li label.texto:hover {
+        cursor: pointer;
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #4a4a4a;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="radio"]:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-color: #a3b5c8;
+      }
+
+      input[type="radio"]:checked {
+        background-color: cornflowerblue;
+        border-color: #a3b5c8;
+      }
+
+      select {
+        padding-left: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      select:focus {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+
+      select:checked {
+        border: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       /*================================ 
         Media Queries 
         ================================*/
+
       @media (max-width: 768px) {
         .filtro {
           width: 100%;
           border-right: none;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
+
         .cabezera {
           flex-direction: column;
+        }
+
+        table {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          overflow-x: auto;
+        }
+
+        thead {
+          display: none;
+        }
+
+        tr {
+          display: block;
+          margin-bottom: 15px;
+          border-radius: 8px;
+          background-color: #f9f9f9;
+          padding: 15px;
+          box-sizing: border-box;
+        }
+
+        td {
+          display: block;
+          padding: 10px 0;
+        }
+
+        .imagen-tabla {
+          width: 100%;
+          height: auto;
+          margin-bottom: 10px;
+        }
+
+        button.boton-mediano {
+          width: 100%;
+          margin-top: 10px;
+          font-size: 1.2rem;
+        }
+        .libre::before {
+          font-size: 1.2rem;
+        }
+
+        .ocupado::before {
+          font-size: 1.2rem;
+        }
+        .texto {
+          font-size: 1rem;
         }
       }
 
       @media (max-width: 480px) {
-        table {
-          width: 100%;
+        button.boton-mediano {
+          padding: 12px;
+          font-size: 0.85rem;
         }
-
-        tr td {
-          width: 0px;
-        }
-
-        .imagen-tabla {
-          width: 75px;
-          height: 80px;
-        }
-
-        .tabla-titulos {
-          font-size: 0.64rem;
-          padding: 10px 0px;
+        .texto {
+          font-size: 0.95rem;
         }
 
         .libre::before {
-          content: "Libre";
-          font-size: 0.64rem;
-          color: #4a4a4a;
+          font-size: 1rem;
         }
 
         .ocupado::before {
-          content: "Ocupado";
-          font-size: 0.64rem;
-          color: #4a4a4a;
-        }
-
-        .texto {
-          font-size: 0.64rem;
-        }
-
-        button.boton-mediano {
-          padding: 8px 10px;
-          border-radius: 2px;
-          font-size: 0.6em;
+          font-size: 1rem;
         }
       }
     </style>
@@ -186,7 +256,7 @@
         <ul>
           <li><a href="instalaciones.html" class="activo">Instalaciones</a></li>
           <li><a href="herramientas.html">Herramientas</a></li>
-          <li><a href="">Historial</a></li>
+          <li><a href="historial.html">Historial</a></li>
           <li><a href="">Nosotros</a></li>
           <li>
             <a href="#" class="user">
@@ -314,7 +384,7 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Item 1 -->
+              <!-- Instalación 1 -->
               <tr>
                 <td><span class="libre"> </span></td>
                 <td class="imagen">
@@ -336,7 +406,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 2 -->
+              <!-- Instalación 2 -->
               <tr>
                 <td><span class="ocupado"> </span></td>
                 <td>
@@ -359,7 +429,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 3 -->
+              <!-- Instalación 3 -->
               <tr>
                 <td><span class="ocupado"> </span></td>
                 <td>
@@ -382,7 +452,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 4 -->
+              <!-- Instalación 4 -->
               <tr>
                 <td><span class="libre"> </span></td>
                 <td>
@@ -404,7 +474,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 5 -->
+              <!-- Instalación 5 -->
               <tr>
                 <td><span class="ocupado"> </span></td>
                 <td>
@@ -426,7 +496,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 6 -->
+              <!-- Instalación 6 -->
               <tr>
                 <td><span class="ocupado"> </span></td>
                 <td>
@@ -448,7 +518,7 @@
                   <button class="boton-mediano">Reservar</button>
                 </td>
               </tr>
-              <!-- Item 7 -->
+              <!-- Instalación 7 -->
               <tr>
                 <td><span class="libre"> </span></td>
                 <td>

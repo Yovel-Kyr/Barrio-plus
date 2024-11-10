@@ -1,6 +1,5 @@
 * {
   font-family: Verdana;
-  box-sizing: border-box;
 }
 
 body {
@@ -197,4 +196,7 @@ Buttons
 }
 
 @media (max-width: 480px) {
+  nav ul li a {
+    font-size: 0.9rem;
+  }
 }
