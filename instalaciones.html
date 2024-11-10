@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ricardo-Daniel-Villamar-Minuche" />
+    <title>Instalaciones</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      /*================================ 
+        Contenedores 
+        ================================*/
+      .principal {
+        flex: 1;
+        width: 100%;
+      }
+      .filtro {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        float: left;
+        width: 14%;
+        margin: 10px;
+        padding: 10px;
+      }
+      .filtro section {
+        margin-top: 20px;
+      }
+      .filtro section ul {
+        margin: 10px 0px;
+        list-style: none;
+        padding-left: 10px;
+      }
+      .cabezera {
+        display: flex;
+        padding: 0px 50px;
+        margin-bottom: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      /*================================ 
+        Tablas 
+        ================================*/
+      table {
+        border-collapse: collapse;
+        width: 90%;
+        padding: 20px;
+      }
+
+      tr th {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      tr td {
+        width: 90px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      tr:hover {
+        border-radius: 8px;
+        transition: ease 0.3s;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .imagen-tabla {
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .imagen-tabla:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+        transition: ease 0.3s;
+      }
+
+      .tabla-titulos {
+        font-weight: bold;
+        font-family: Verdana;
+        font-size: 0.8rem;
+      }
+
+      .texto {
+        margin-top: 2px;
+        margin-bottom: 5px;
+      }
+
+      /* .libre ~ td {
+          display: flex;
+        } */
+
+      .libre::before {
+        content: "Libre";
+        font-family: verdana;
+        font-size: 0.7rem;
+        color: #4a4a4a;
+      }
+
+      .ocupado::before {
+        content: "Ocupado";
+        font-family: verdana;
+        font-size: 0.7rem;
+        color: #4a4a4a;
+      }
+
+      /*================================ 
+        Media Queries 
+        ================================*/
+      @media (max-width: 768px) {
+        .filtro {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .cabezera {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 480px) {
+        table {
+          width: 100%;
+        }
+
+        tr th {
+          width: 0px;
+          /* padding: 20px; */
+          text-align: center;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        tr td {
+          width: 0px;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .imagen-tabla {
+          width: 75px;
+          height: 80px;
+          object-fit: cover;
+        }
+
+        .imagen-tabla:hover {
+          cursor: pointer;
+          transform: scale(1.02);
+          transition: ease 0.3s;
+        }
+
+        .tabla-titulos {
+          font-weight: bold;
+          font-family: Verdana;
+          font-size: 0.64rem;
+          padding: 10px 0px;
+        }
+
+        .libre::before {
+          content: "Libre";
+          font-family: verdana;
+          font-size: 0.64rem;
+          color: #4a4a4a;
+        }
+
+        .ocupado::before {
+          content: "Ocupado";
+          font-family: verdana;
+          font-size: 0.64rem;
+          color: #4a4a4a;
+        }
+
+        .texto {
+          font-size: 0.64rem;
+        }
+
+        button.boton-mediano {
+          padding: 8px 10px;
+          border-radius: 2px;
+          font-size: 0.6em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <!-- Navbar -->
+      <header>
+        <nav id="navbar">
+          <a class="logo-link" href="">
+            <img class="logo" src="logo.png" alt="logo" />
+          </a>
+          <ul>
+            <li><a href="">Instalaciones</a></li>
+            <li><a href="">Herramientas</a></li>
+            <li><a href="">Historial</a></li>
+            <li><a href="">Nosotros</a></li>
+          </ul>
+          <a class="icono-usuario" href="">
+            <img class="usuario" src="imagen.png" alt="usuario" />
+          </a>
+        </nav>
+      </header>
+      <!-- Contenedor General -->
+      <main>
+        <!-- Filtro -->
+        <aside class="filtro">
+          <h2 class="subtitulos">Filtros</h2>
+          <section>
+            <p class="texto">Estado</p>
+            <select
+              id="disponibilidad"
+              style="width: 90%; height: 25px; border-radius: 4px"
+            >
+              <option value="todos">Todos</option>
+              <option value="ocupado">Ocuapado</option>
+              <option value="libre">No ocupado</option>
+            </select>
+          </section>
+          <section>
+            <p class="texto">Tamaño</p>
+            <ul>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tamaño" />
+                  Todos
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tamaño" />
+                  Grande
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tamaño" />
+                  Mediano
+                </label>
+              </li>
+
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tamaño" />
+                  Pequeño
+                </label>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <p class="texto">Tipos</p>
+            <ul>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tipos" />
+                  Todos
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tipos" />
+                  Aire libre
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tipos" />
+                  Aula
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tipos" />
+                  Salón
+                </label>
+              </li>
+              <li>
+                <label class="texto">
+                  <input type="radio" name="tipos" />
+                  Taller
+                </label>
+              </li>
+            </ul>
+          </section>
+        </aside>
+        <!-- Main -->
+        <div class="principal">
+          <!-- Cabecera -->
+          <section class="cabezera">
+            <h2 class="titulos buscar" style="display: inline-block">
+              Instalaciones
+            </h2>
+            <div class="buscar" style="display: inline-block">
+              <label for="buscar" class="texto"></label>
+              <input
+                placeholder="Buscar..."
+                type="text"
+                id="buscar"
+                style="
+                  padding: 0 10px;
+                  margin: 10px;
+                  border-radius: 4px;
+                  border: 1px solid rgba(0, 0, 0, 0.1);
+                  height: 30px;
+                "
+              />
+            </div>
+          </section>
+          <!-- Tabla -->
+          <section
+            style="display: flex; justify-content: center; overflow-x: auto"
+          >
+            <table style="background-color: white; border-radius: 8px">
+              <thead style="border-bottom: 1px solid brown">
+                <tr>
+                  <th class="tabla-titulos">Estado</th>
+                  <th class="tabla-titulos">Instalación</th>
+                  <th class="tabla-titulos">Tamaño</th>
+                  <th class="tabla-titulos">Tipo</th>
+                  <th class="tabla-titulos">Reservar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Item 1 -->
+                <tr>
+                  <td><span class="libre"> </span></td>
+                  <td class="imagen">
+                    <img
+                      src="https://www.fundacionheres.org/wp-content/uploads/2021/02/1.jpg"
+                      alt="saloncomunal"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Salón comunal</p>
+                  </td>
+                  <td>
+                    <span class="texto">Grande</span>
+                  </td>
+                  <td>
+                    <span class="texto">Salón</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 2 -->
+                <tr>
+                  <td><span class="ocupado"> </span></td>
+                  <td>
+                    <img
+                      src="https://dca.gob.gt/noticias-guatemala-diario-centro-america/wp-content/uploads/2020/02/instituto-neurologico-nuevas-canchas-20Feb2020.png"
+                      alt="areadeportiva"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Área deportiva</p>
+                  </td>
+
+                  <td>
+                    <span class="texto">Mediano</span>
+                  </td>
+                  <td>
+                    <span class="texto">Aire libre</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 3 -->
+                <tr>
+                  <td><span class="ocupado"> </span></td>
+                  <td>
+                    <img
+                      src="https://johnsonfitness.tienda/media/wysiwyg/johnson_gimnasios_comunidad_vecinos.jpg"
+                      alt="gimnasio"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Gimnasio comunitario</p>
+                  </td>
+
+                  <td>
+                    <span class="texto">Pequeño</span>
+                  </td>
+                  <td>
+                    <span class="texto">Taller</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 4 -->
+                <tr>
+                  <td><span class="libre"> </span></td>
+                  <td>
+                    <img
+                      src="https://urfintek.com/wp-content/uploads/2023/09/Control-de-acceso-piscina-comunitaria.jpg"
+                      alt="piscina"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Piscina comunitaria</p>
+                  </td>
+                  <td>
+                    <span class="texto">Pequeño</span>
+                  </td>
+                  <td>
+                    <span class="texto">Aire libre</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 5 -->
+                <tr>
+                  <td><span class="ocupado"> </span></td>
+                  <td>
+                    <img
+                      src="https://www.elsoldemorelia.com.mx/local/lf38kv-biblioteca-comunitaria-a-comachuen/ALTERNATES/LANDSCAPE_1140/BIBLIOTECA%20COMUNITARIA%20A%20COMACHUEN"
+                      alt="biblioteca"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Biblioteca comunitaria</p>
+                  </td>
+                  <td>
+                    <span class="texto">Pequeño</span>
+                  </td>
+                  <td>
+                    <span class="texto">Taller</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 6 -->
+                <tr>
+                  <td><span class="ocupado"> </span></td>
+                  <td>
+                    <img
+                      src="https://oziona.es/wp-content/uploads/2021/02/parqueinfantil-oziona-01.jpg"
+                      alt="parque"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Parque infantil</p>
+                  </td>
+                  <td>
+                    <span class="texto">Grande</span>
+                  </td>
+                  <td>
+                    <p class="texto">Aire libre</p>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+                <!-- Item 7 -->
+                <tr>
+                  <td><span class="libre"> </span></td>
+                  <td>
+                    <img
+                      src="https://www.viacelere.com/wp-content/uploads/old-blog/2020/10/sala-de-juegos.jpg"
+                      alt="salarecreativa"
+                      class="imagen-tabla"
+                    />
+                    <p class="texto">Sala recreativa</p>
+                  </td>
+                  <td>
+                    <span class="texto">Mediano</span>
+                  </td>
+                  <td>
+                    <span class="texto">Salón</span>
+                  </td>
+                  <td>
+                    <p class="texto">$15.00</p>
+                    <button class="boton-mediano">Reservar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer id="pie-pagina">
+        <section id="redes-sociales">
+          <ul>
+            <li><a href="">Redes sociales</a></li>
+            <li><a href="">Youtube</a></li>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Twitter</a></li>
+          </ul>
+        </section>
+        <section id="lista-pie">
+          <ul>
+            <li><a href="">Documentacion</a></li>
+            <li><a href="">Politicas de uso</a></li>
+            <li><a href="">Terminos y condiciones</a></li>
+            <li><a href="">Soporte Tecnico</a></li>
+            <li><a href="">Manual de usuario</a></li>
+            <li><a href="">Contactanos</a></li>
+          </ul>
+        </section>
+        <section id="copiright">
+          <p class="texto">&copy; Todos los derechos reservados 2024-2024</p>
+        </section>
+      </footer>
+    </body>
+  </body>
+</html>
