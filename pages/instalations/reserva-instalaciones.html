@@ -5,12 +5,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Ricardo-Daniel-Villamar-Minuche" />
     <title>Reserva Instalaciones</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
     <link rel="icon" href="/assets/logo-icon.png" type="image/png" />
+    <style>
+      main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .contenedor-formulario {
+        flex: 1;
+        max-width: 45%;
+        background-color: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .contenedor-informacion {
+        flex: 1;
+        max-width: 45%;
+        background-color: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .contenedor-botones {
+        display: flex;
+        justify-content: space-around;
+        padding: 0px;
+      }
+
+      button.boton-mediano {
+        width: 100%;
+        margin: 0px 10px;
+        font-size: 1rem;
+        padding: 10px;
+      }
+
+      .informacion-extra div {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .informacion-extra p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .informacion-extra span {
+        margin: 0;
+        font-size: 1rem;
+      }
+      .linea-divisoria {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+      }
+      h3 ~ fieldset {
+        margin: 1rem;
+        padding-right: 1.5rem;
+        padding-left: 0px;
+        border: 0px;
+      }
+
+      label {
+        display: block;
+        padding: 10px 0px;
+      }
+
+      input {
+        width: 100%;
+        display: inline-block;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      textarea {
+        width: 100%;
+        height: 90px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        resize: none;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      select {
+        width: 100%;
+        padding: 10px 100px 10px 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      select:focus {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+
+      select:checked {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .titulos {
+        margin: 1rem;
+      }
+      .subtitulos {
+        display: block;
+        margin-top: 0px;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .titulos {
+          font-size: 1.8rem;
+        }
+        .subtitulos {
+          font-size: 1rem;
+        }
+
+        button.boton-mediano {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        .contenedor-botones {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          padding: 0px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        main {
+          align-items: center;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .contenedor-formulario {
+          max-width: 100%;
+          order: 2;
+        }
+
+        .contenedor-informacion {
+          max-width: 100%;
+          order: 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -35,12 +194,93 @@
         </ul>
       </nav>
     </header>
-    <!-- Pagina de formularioa para reservar las instalaciones del sitio web -->
-
+    <h1 class="titulos">Reservación</h1>
     <main>
-      <section>
-        <h1>Reserva de instalaciones</h1>
-        <form action="" id="formulario-reservas-instalaciones"></form>
+      <section class="contenedor-formulario">
+        <form action="" id="formulario-reservas-instalaciones">
+          <h3 class="subtitulos">Formulario de reservación</h3>
+          <fieldset>
+            <h3 class="subtitulos">Información personal</h3>
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Ingrese su nombre" />
+
+            <label for="">Teléfono</label>
+            <input type="tel" placeholder="Ingrese su número de teléfono" />
+          </fieldset>
+
+          <fieldset>
+            <h3 class="subtitulos">Fecha y hora de reserva</h3>
+            <label for="">Desde</label>
+            <input type="date" class="input-wrapper" />
+            <input type="time" />
+            <label for="">Hasta</label>
+            <input type="date" />
+            <input type="time" />
+          </fieldset>
+
+          <fieldset>
+            <h3 class="subtitulos">Información de la reserva</h3>
+            <div>
+              <label for="">Personas esperadas</label>
+              <input type="number" min="2" placeholder="Cantidad de personas" />
+
+              <label for="">Proposito de la reserva</label>
+              <select name="" id="">
+                <option value="">Seleccione...</option>
+                <option value="">Evento</option>
+                <option value="">Reunión</option>
+                <option value="">Actividad deportiva</option>
+                <option value="">Otro</option>
+              </select>
+            </div>
+
+            <label for="">Notas adicionales (opcional)</label>
+            <textarea
+              id="notas"
+              placeholder="Agregue información adicional (opcional)"
+            ></textarea>
+          </fieldset>
+          <fieldset class="contenedor-botones">
+            <button type="reset" class="boton-mediano">Cancelar</button>
+            <button type="submit" class="boton-mediano">Reservar</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="contenedor-informacion">
+        <h3 class="subtitulos">Salón Comunal</h3>
+        <img
+          src="https://www.fundacionheres.org/wp-content/uploads/2021/02/1.jpg"
+          alt="saloncomunal"
+          style="
+            object-fit: cover;
+            border-radius: 8px;
+            width: 100%;
+            height: 200px;
+          "
+        />
+        <div
+          class="informacion-extra"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+          "
+        >
+          <div>
+            <p class="texto">Tamaño:</p>
+            <span class="texto">Grande</span>
+          </div>
+          <div>
+            <p class="texto">Tipo:</p>
+            <span class="texto">Salón</span>
+          </div>
+          <hr class="linea-divisoria" />
+          <div>
+            <p class="texto">Precio de reserva:</p>
+            <span class="texto">$15.00</span>
+          </div>
+        </div>
       </section>
     </main>
 
