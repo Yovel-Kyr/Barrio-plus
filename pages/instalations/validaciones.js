@@ -35,7 +35,7 @@ function validarFormulario() {
     correcto = true;
   }
 
-  //===============Fecha y hora
+  //===============Fecha
   let fechaDesde;
   let fechadesde = document.getElementById("fecha-desde");
   if (fechadesde.value === "") {
