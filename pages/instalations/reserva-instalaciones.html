@@ -104,6 +104,13 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
       }
 
+      .checkbox-grupo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 10px;
+      }
+
       select {
         width: 100%;
         padding: 10px 100px 10px 5px;
@@ -194,49 +201,84 @@
         </ul>
       </nav>
     </header>
-    <h1 class="titulos">Reservación</h1>
+    <h1 class="titulos" style="padding: 0px 10px">Reservación</h1>
     <main>
       <section class="contenedor-formulario">
-        <form action="" id="formulario-reservas-instalaciones">
+        <form
+          id="formulario-instalaciones"
+          onsubmit="return validarFormulario()"
+        >
           <h3 class="subtitulos">Formulario de reservación</h3>
           <fieldset>
             <h3 class="subtitulos">Información personal</h3>
-            <label>Nombre completo</label>
-            <input type="text" placeholder="Ingrese su nombre" />
+            <label for="nombre">Nombre completo</label>
+            <input
+              type="text"
+              placeholder="Ingrese su nombre"
+              id="nombre"
+              name="nombre"
+            />
 
-            <label for="">Teléfono</label>
-            <input type="tel" placeholder="Ingrese su número de teléfono" />
+            <label for="telefono">Teléfono</label>
+            <input
+              type="tel"
+              placeholder="Ingrese su número teléfono"
+              id="telefono"
+              name="telefono"
+              maxlength="10"
+            />
+
+            <div class="checkbox-grupo">
+              <input
+                style="
+                  display: inline-block;
+                  width: auto;
+                  height: auto;
+                  margin: 0px;
+                "
+                type="checkbox"
+                value="miembro"
+                name="miembro"
+              />
+              <label> ¿Es un miembro de la comunidad?</label>
+            </div>
           </fieldset>
 
           <fieldset>
-            <h3 class="subtitulos">Fecha y hora de reserva</h3>
-            <label for="">Desde</label>
-            <input type="date" class="input-wrapper" />
-            <input type="time" />
-            <label for="">Hasta</label>
-            <input type="date" />
-            <input type="time" />
+            <h3 class="subtitulos">Fecha de la reserva</h3>
+            <label for="fecha-desde">Desde</label>
+            <input type="date" id="fecha-desde" name="fecha-desde" />
+
+            <label for="fecha-hasta">Hasta</label>
+            <input type="date" id="fecha-hasta" name="fecha-hasta" />
           </fieldset>
 
           <fieldset>
             <h3 class="subtitulos">Información de la reserva</h3>
             <div>
-              <label for="">Personas esperadas</label>
-              <input type="number" min="2" placeholder="Cantidad de personas" />
+              <label for="personas">Personas esperadas</label>
+              <input
+                type="number"
+                min="2"
+                placeholder="Cantidad de personas"
+                id="personas"
+                name="personas"
+              />
 
-              <label for="">Proposito de la reserva</label>
-              <select name="" id="">
-                <option value="">Seleccione...</option>
-                <option value="">Evento</option>
-                <option value="">Reunión</option>
-                <option value="">Actividad deportiva</option>
-                <option value="">Otro</option>
+              <label for="proposito">Proposito de la reserva</label>
+              <select name="proposito" id="proposito" class="propositos">
+                <option value="">Seleccionar...</option>
+                <option value="evento">Evento</option>
+                <option value="reunion">Reunión</option>
+                <option value="conferencia">Conferencia</option>
+                <option value="otro">Otro</option>
               </select>
             </div>
 
-            <label for="">Notas adicionales (opcional)</label>
+            <label for="notas">Datos adicionales (opcional)</label>
             <textarea
               id="notas"
+              name="notas"
               placeholder="Agregue información adicional (opcional)"
             ></textarea>
           </fieldset>
@@ -283,7 +325,6 @@
         </div>
       </section>
     </main>
-
     <footer>
       <section id="redes-sociales">
         <ul>
@@ -308,5 +349,9 @@
         <p class="texto">&copy; Todos los derechos reservados 2024-2024</p>
       </section>
     </footer>
+    <script
+      type="text/javascript"
+      src="/pages/instalations/validaciones.js"
+    ></script>
   </body>
 </html>
