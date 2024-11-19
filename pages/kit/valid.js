@@ -100,7 +100,6 @@ function validarFormulario() {
     if (capacita.value === "") {
       correcto = true;
     }
-      return correcto;
   
   }
   
