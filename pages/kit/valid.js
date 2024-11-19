@@ -53,7 +53,7 @@ function validarFormulario() {
       alert("El correo electrónico es demasiado largo");
       correcto = false;
     }
-   //===================================================================================
+   //==================================================================================
     let cant = document.getElementById("cant");
   
     if (cant.value === "") {
